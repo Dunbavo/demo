@@ -6,7 +6,7 @@
     ${title} - передача параметра title из файла MainController-->
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> <!--подключение css файла-->
-    <link rel="stylesheet" href="css/styleActNews.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
@@ -15,8 +15,8 @@
     <main>
     <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
         <div class="col-md-5 p-lg-5 mx-auto my-5">
-            <h1 class="display-4 fw-normal"><ya-tr-span data-index="1-0" data-value="GUARD" data-translation="ОБЕРЕГ" data-type="trSpan">ОБЕРЕГ</ya-tr-span></h1>
-            <p class="lead fw-normal"><ya-tr-span data-index="2-0" data-value="Social organization to help large families, the elderly, people with disabilities, children left without parental care."
+            <h1 class="display-4 fw-normal tc"><ya-tr-span data-index="1-0" data-value="GUARD" data-translation="ОБЕРЕГ" data-type="trSpan">ОБЕРЕГ</ya-tr-span></h1>
+            <p class="lead fw-normal tc"><ya-tr-span data-index="2-0" data-value="Social organization to help large families, the elderly, people with disabilities, children left without parental care."
                data-translation="Социальная организация для помощи многодетным семьям, пожилым людям, людям с ОВЗ, детям, оставшимся без попечения родителей."
                data-type="trSpan">Социальная организация, оказывающая помощь и поддержку многодетным семьям, пожилым людям, людям с ОВЗ, детям, оставшимся без попечения родителей.</ya-tr-span>
                 <!--<ya-tr-span data-index="2-1" data-value="Jumpstart your marketing efforts with this example based on Apple’s marketing pages."
@@ -51,7 +51,7 @@
                     </div>
                 </div>
 
-                <div class="col" style="margin-bottom: 15px;" th:each="el : ${posts}" >
+                <div class="col" style="margin-bottom: 15px;" th:each="el : ${posts}">
                     <div class="card shadow-sm blocksN">
                         <img th:src="${el.img}">
                         <div class="card-body">
@@ -59,7 +59,23 @@
                             <p th:text="${el.anons}"/>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                    <a th:href="'/news'" class="btn btn-danger">Детальнее</a>
+                                    <a th:href="'/news' + ${el.id}" class="btn btn-danger">Детальнее</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col an" th:each="el : ${activities}" >
+                    <div class="card shadow-sm blocksA">
+                        <img style = "height:53%" th:src="${el.img}">
+                        <div class="card-body">
+                            <h3 th:text="${el.title}"/>
+                            <p th:text="${el.anons}"/>
+                            <p th:text="${el.data}"/>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a th:href="'/activity/' + ${el.id}" class="btn btn-danger">Детальнее</a>
                                 </div>
                             </div>
                         </div>
@@ -71,8 +87,9 @@
 
         <div class="container">
             <div class="row">
-                <div class="col text-center">
-                    <br><a th:href="'/news'" class="btn btn-danger">Все новости</a>
+                <div class="col text-center bs">
+                    <a th:href="'/news'" class="btn btn-danger size">Все новости</a>
+                    <a th:href="'/activity'" class="btn btn-danger size">Все мероприятия</a>
                 </div>
             </div>
         </div>

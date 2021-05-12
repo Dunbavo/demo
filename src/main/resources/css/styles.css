@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto');
+.bs{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.bm{
+    margin-bottom: 15px;
+    color: #000000;
+}
+
+.btn-danger {
+    color: #fff;
+    background-color: #ef2323;
+    border-color: #ef2323;
+}
+
+.size{
+    height: 38px;
+    width: 154px;
+}
+
+.attribute {
+    color: #000000;
+    font-weight: bold;
+}
+
+.an{
+    margin-bottom: 15px;
+}
+
+.blocksA{
+   height: 500px;
+}
+
+.blocksN{
+   height: 450px;
+}
+
+.vv{
+    margin-top: 5px;
+}
+
+.tc{
+    color: #000000;
+}

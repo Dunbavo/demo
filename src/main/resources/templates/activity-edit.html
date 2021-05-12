@@ -9,6 +9,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 <header th:insert="blocks/header :: header"></header>
@@ -25,14 +26,13 @@
             <input type="text" th:value="${el.anons}" name="anons" placeholder="Введите анонс мероприятия" class="form-control"><br>
             <input type="text" th:value="${el.data}" name="data" placeholder="Введите дату мероприятия" class="form-control"><br>
             <textarea id="summernote" name="fullText" class="form-control" th:text="${el.fullText}"/><br>
-            <button type="submit" class="btn btn-success">Обновить</button> <!--type="submit" - при нажатии на кнопку страница перезагружается и данные отправляются на сервер.
+            <button type="submit" class="btn btn-danger">Обновить</button> <!--type="submit" - при нажатии на кнопку страница перезагружается и данные отправляются на сервер.
             class="btn btn-success" - класс bootstrap. th:text="${el.fullText}" - всавляет текст внутрь тега (отличается от предыдущих, т.к. используется "textarea")-->
         </form>
     </div>
     </div>
     <script>
       $('#summernote').summernote({
-            lang:'ru-RU',
             placeholder: 'Введите полный текст мероприятия',
             tabsize: 2,
             height: 100,

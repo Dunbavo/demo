@@ -41,7 +41,7 @@ body{
     background: #ecf0f1;
     max-width: 350px;
     border-radius: 5px;
-    border-top: 4px solid #e74c3c;
+    border-top: 4px solid #ef2323;
     box-shadow: 3px 3px 10px #333;
     padding: 15px;
 }
@@ -84,7 +84,7 @@ body{
 }
 
 #range1 button {
-    background: #e74c3c;
+    background: #ef2323;
     border:none;
     color: white;
     font-size: 18px;
@@ -142,7 +142,7 @@ body{
     font-weight: 200;
     font-size: 2em;
     margin-top: 10px;
-    color: #34495e;
+    color: #000000;
 }
 
 #range1 .form {

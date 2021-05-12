@@ -4,7 +4,7 @@
     <title>Новости</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/styleActNews.css"> <!--подключение файлов css-->
+    <link rel="stylesheet" href="css/styles.css"> <!--подключение файлов css-->
 </head>
 <body>
     <header th:insert="blocks/header :: header"></header>
@@ -12,7 +12,7 @@
     <div class="container mt-5">
         <!--container - встроенный класс, добавляющий отступы. mt-5 - отступы сверху, равные 5-ти пикс-->
         <h1>Новости</h1>
-        <div class="btn-group"><a th:href="'/news/add'" class="btn btn-danger">Добавить новость</a></div>
+        <div class="btn-group"><a th:href="'/news/add'" class="btn btn-danger an">Добавить новость</a></div>
 <!--        <div th:each="el : ${posts}" class="alert alert-info mt-2"> &lt;!&ndash;вывод записей перебором через цикл. el(переменная) : (указание того, что мы перебираем)&ndash;&gt;-->
 <!--            <h3 th:text="${el.title}"/> &lt;!&ndash;обращение к полю title&ndash;&gt;-->
 <!--            <p th:text="${el.anons}"/>-->

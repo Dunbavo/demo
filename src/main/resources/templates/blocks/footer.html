@@ -1,61 +1,26 @@
 <html xmlns:th="http://www.thymeleaf.org"> <!--подключение шаблонизатора thymeleaf-->
+<link rel="stylesheet" href="css/styles.css">
 <div th:fragment="footer"> <!--указание того, что это фрагмент-->
     <footer class="container py-5">
         <div class="row justify-content-md-center" >
-            <!--<div class="col-12 col-md">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mb-2" role="img" viewBox="0 0 24 24"><title>Product</title><circle cx="12" cy="12" r="10"></circle><path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"></path></svg>
-                <small class="d-block mb-3 text-muted">© 2017–2021</small>
-            </div>-->
-            <strong>© 2020-2021, ОБЕРЕГ</strong>
-            <!--<div class="col-6 col-md">
-                <h5>О нас</h5>-->
-            <!--<div class="col-md-5">
-            <ul class="list-unstyled text-small">
-                <a class="link-secondary" href="#">Команда</a>
-                <a class="link-secondary" href="#">Адрес</a>--><!--<li></li> - перенос на новую строку-->
-                 <div class="col-md-5">
-                     <ul style="margin-bottom: 15px;">
-                        <div class="address_info"><strong>Адрес:</strong> <span class="address_text">675000, г. Благовещенск,  ул. Октябрьская, 120</span></div>
 
-                     </ul>
-                 </div>
-            <!-- </div>-->
-                 <div class="col-md-20">
-                     <ul style="margin-bottom: 15px;">
-                        <strong>Связь с нами: </strong><span class="contact_text">+7-914-444-01-50</span>
-                     </ul>
-                 </div>
+            <strong class="bm">© 2020-2021, ОБЕРЕГ</strong>
 
-                 <div class="col-md-20">
-                     <ul style="margin-bottom: 15px;">
-                         <strong>E-mail:</strong> <a href="mailto:nat.gul200582@yandex.ru">nat.gul200582@yandex.ru</a>
-                     </ul>
-                 </div>
+            <div class="col-md-5 bm">
+                <ul><strong>Адрес:</strong><span class="address_text"> 675000, г. Благовещенск,  ул. Октябрьская, 120</span></ul>
+            </div>
 
-                 <div class="col-md-20">
-                     <ul style="margin-bottom: 15px;">
-                        <a href="https://instagram.com/_obereg_28_?igshid=roqaykj8k140" target="_blank" title="Instagram" class="footer__icon"><img src="https://leodev.ru/blog/wp-content/plugins/about-me-3000/instagram.png" alt="Instagram" border="0"></a><!--<img src="/Icons/inst.png" alt="Instagram">-->
-                     </ul>
-                 </div>
+            <div class="col-md-20 bm">
+                <ul><strong>Связь с нами: </strong><span class="contact_text">+7-914-444-01-50</span></ul>
+            </div>
 
+            <div class="col-md-20 bm">
+                <ul><strong>E-mail:</strong> <a href="mailto:nat.gul200582@yandex.ru">nat.gul200582@yandex.ru</a></ul>
+            </div>
 
-                 <!--<footer class="footer"><div class="footer__container"><div class="row"><div class="col-md-5"><strong>© 2001-2021, Правительство Амурской области</strong><br> <br>
-                 <p>При использовании материалов портала <br>ссылка на <a href="/">www.amurobl.ru</a> обязательна</p>
-                 <p><a href="/pages/dokumenty/zakonodatelnaya-karta/">Законодательная карта портала</a></p>
-                 <p><a href="/about/">О портале</a></p> <div class="footer__icons">
-                     <ul style="margin-bottom: 15px;"><li>
-                     <li><a href="https://www.instagram.com/amurobl_official/" target="_blank" title="Instagram" class="footer__icon"><img src="/static/images/footer/instagram-brand.svg" alt="Instagram"></a></li>
-                     </ul>
-                 <ul><li><a href="https://metrika.yandex.ru/stat/?id=50235757&amp;from=informer" target="_blank" rel="nofollow">
-                 <img src="https://informer.yandex.ru/informer/50235757/1_0_FFFFFFFF_EFEFEFFF_0_uniques" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (уникальные посетители)"
-                 data-cid="50235757" data-lang="ru" class="ym-advanced-informer" style="width: 80px; height: 15px; border: 0px;"></a>
-                 <noscript><div><img src="https://mc.yandex.ru/watch/50235757" alt="" style="position: absolute; left: -9999px;"></div></noscript></li></ul></div>
-                 <br><br></div> <div class="col-md-4"><div class="address_info"><strong>Адрес:</strong> <span class="address_text">675023, г. Благовещенск,  ул. Ленина, 135</span></div> <br>
-                 <strong>E-mail:</strong> <a href="mailto:mail@amurobl.ru">mail@amurobl.ru</a> <br></div> <div class="col-md-3"><a href="//orphus.ru" id="orphus" target="_blank" class="footer__orph-box">
-                 <div class="footer__orph-img"><img src="/static/images/exclamation.svg" alt="Система Orphus"></div> <div class="footer__orph-text">
-                     Нашли опечатку
-                     <div class="footer__orph-text-mark">
-                         Orphus: Ctrl+Enter
-                     </div></div></a> <br> <a href="/feedback/" title="Обратная связь">Обратная связь</a></div></div> <a id="toTop" title="Наверх" style="display: inline;">^</a></div></footer>-->
+            <div class="col-md-20 bm">
+                <ul><a href="https://instagram.com/_obereg_28_?igshid=roqaykj8k140" target="_blank" title="Instagram" class="footer__icon"><img src="https://leodev.ru/blog/wp-content/plugins/about-me-3000/instagram.png" alt="Instagram" border="0"></a></ul>
+            </div>
+
         </div> </footer>
 </div>

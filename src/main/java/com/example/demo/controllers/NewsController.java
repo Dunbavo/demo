@@ -4,12 +4,15 @@ import com.example.demo.models.Post;
 import com.example.demo.repo.PostRepository;
 import com.example.demo.services.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import java.util.ArrayList;
 import java.util.Optional;
@@ -45,7 +48,7 @@ public class NewsController {
     @GetMapping("/news/{id}/edit") //редактирование статьи
     public String newsEdit(@PathVariable(value = "id") long id, Model model) { //@PathVariable - анотация, принимающая динамический параметр из url-адреса (в определённый параметр (long id) помещается значение, полученное из url-адреса
         if(!postService.existsById(id)){ //try - если определённая запись по определённому id не была найдена. иначе false
-            return "redirect:/news"; //перенаправление на указанную страницу
+            return "redirect:/news/{id}"; //перенаправление на указанную страницу
         }
         //Optional<Post> post= postRepository.findById(id);
         Optional<Post> post= postService.findById(id); //нахождение записи по id и помещение в объект post на основе класса Optional и модели <Post>
@@ -76,4 +79,5 @@ public class NewsController {
         postService.delete(post); //удаление определенной записи
         return "redirect:/news"; //переадресация пользователя на указанную страницу после удаления статьи
     }
+
 }
