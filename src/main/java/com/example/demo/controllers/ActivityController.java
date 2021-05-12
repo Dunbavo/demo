@@ -8,7 +8,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import javax.xml.crypto.Data;
 import java.util.ArrayList;
 import java.util.Optional;
 
@@ -20,9 +19,6 @@ public class ActivityController {
 
     @GetMapping("/activity")
     public String activity(Model model) {
-
-
-
         model.addAttribute("activities", activityService.findAll()); //передача значений
         model.addAttribute("title", "Мероприятия");
         return "activity";
@@ -69,10 +65,11 @@ public class ActivityController {
     }
 
     @PostMapping("/activity/{id}/edit") //получение данных из формы
-    public String activityActivityUpdate(@PathVariable(value = "id") long id, @RequestParam String title, @RequestParam String anons, @RequestParam String fullText, @RequestParam String data, Model model) { //@RequestParam - получение значений из формы. title - получение значений из данного поля
+    public String activityActivityUpdate(@PathVariable(value = "id") long id, @RequestParam String img, @RequestParam String title, @RequestParam String anons, @RequestParam String fullText, @RequestParam String data, Model model) { //@RequestParam - получение значений из формы. title - получение значений из данного поля
         Activity activity = activityService.findById(id).orElseThrow(
                 () -> new RuntimeException()
         ); //orElseTrow() - исключительная ситуация в случае не нахождения записи
+        activity.setImg(img);
         activity.setTitle(title); //установка введеного заголовка
         activity.setAnons(anons);
         activity.setFullText(fullText);

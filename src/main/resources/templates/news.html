@@ -22,28 +22,15 @@
         <div class="album py-5 bg-light">
             <div class="container">
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                    <div class="col">
-                        <div class="card shadow-sm blocksN"><img src="https://i.mycdn.me/i?r=AzEPZsRbOZEKgBhR0XGMT1RkNLZfRJSjLES8bIIBAylhYKaKTM5SRkZCeTgDn6uOyic" alt="Доброта"> <!--src="img/news/Sustainability.jpg"-->
-                            <div class="card-body">
-                                <h3 class="card-text">Доброта</h3>
-                                <p class="card-text">Доброта — это проявление силы или слабости человека и что может принести такое качество?</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <a th:href="'/news'" class="btn btn-danger">Детальнее</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="col" style="margin-bottom: 15px;" th:each="el : ${posts}" >
-                        <div class="card shadow-sm blocksN">
-                            <img th:src="${el.img}"> <!--style = "height:230px"-->
+                    <div class="col an" th:each="el : ${posts}" >
+                        <div class="card shadow-sm blocks">
+                            <img th:src="${el.img}">
                             <div class="card-body">
                                 <h3 th:text="${el.title}"/>
                                 <p th:utext="${el.anons}"/>
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
+                                    <div class="btn-group an1">
                                         <a th:href="'/news/' + ${el.id}" class="btn btn-danger">Детальнее</a>
                                     </div>
                                 </div>

@@ -29,12 +29,12 @@
     margin-bottom: 15px;
 }
 
-.blocksA{
-   height: 500px;
+.an1{
+    margin-top: 50px;
 }
 
-.blocksN{
-   height: 450px;
+.blocks{
+   height: 470px;
 }
 
 .vv{
@@ -43,4 +43,9 @@
 
 .tc{
     color: #000000;
+}
+
+.det{
+    padding-left: 15px;
+    padding-right: 15px;
 }

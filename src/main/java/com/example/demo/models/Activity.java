@@ -26,7 +26,7 @@ public class Activity {
         return img;
     }
 
-    public void setId(String img) {
+    public void setImg(String img) {
         this.img = img;
     }
 
@@ -72,4 +72,5 @@ public class Activity {
         this.data = data;
         this.fullText = fullText;
     }
+
 }

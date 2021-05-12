@@ -11,14 +11,14 @@
 <!--insert - встраивает фрагмент внутрь тега "путь :: фрагмент"-->
 <div class="container mt-5">
     <!--container - встроенный класс, добавляющий отступы. mt-5 - отступы сверху, равные 5-ти пикс-->
-    <div th:each="el : ${post}" class="alert alert-info mt-2"> <!--вывод записей перебором через цикл. el(переменная) : (указание того, что мы перебираем)-->
+    <div th:each="el : ${post}" class="album py-5 bg-light det"> <!--вывод записей перебором через цикл. el(переменная) : (указание того, что мы перебираем)-->
         <h1 th:text="${el.title}"/> <!--обращение к полю title-->
         <p th:utext="${el.fullText}"/>
         <!--<p><b>Просмотры</b> <span th:text="${el.views}"/></p>-->
-        <a th:href="'/news/' + ${el.id} + '/edit'" class="btn btn-warning btn-danger">Редактировать</a> <!--ссылка на редактирование статьи-->
+        <form><a th:href="'/news/' + ${el.id} + '/edit'" class="btn btn-warning btn-danger">Редактировать</a> <!--ссылка на редактирование статьи-->
         <form th:action="'/news/' + ${el.id} + '/remove'" method="post"> <!--method="post" - информация передаётся в теле запроса-->
         <button class="btn btn-warning btn-danger" type="submit">Удалить</button> <!--type="submit" - перезагрузка страницы и отправка данных на сервер при нажатии на кнопку-->
-        </form>
+        </form></form>
     </div>
 </div>
 <div th:insert="blocks/footer :: footer"></div>
