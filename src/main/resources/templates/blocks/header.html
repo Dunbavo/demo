@@ -1,0 +1,18 @@
+<html xmlns:th="http://www.thymeleaf.org"> <!--подключение шаблонизатора thymeleaf-->
+<link rel="stylesheet" href="css/styleActNews.css">
+<div th:fragment="header"> <!--указание того, что это фрагмент-->
+    <header class="site-header sticky-top py-1"> <!--style="background-color: #dbd7d2;"-->
+        <nav class="container d-flex flex-column flex-md-row justify-content-between">
+            <a class="py-2 d-none d-md-inline-block" style="color: #000000;" href="/"><ya-tr-span data-index="0-0" data-value="Main" data-translation="Главная" data-type="trSpan">Главная</ya-tr-span></a><!--color="#212529"-->
+            <a class="py-2 d-none d-md-inline-block" style="color: #000000;" href="/information"><ya-tr-span data-index="0-0" data-value="Information" data-translation="Информация" data-type="trSpan">Информация</ya-tr-span></a><!--color="#212529"-->
+            <a class="py-2 d-none d-md-inline-block" style="color: #000000;" href="/news"><ya-tr-span data-index="0-0" data-value="News" data-translation="Новости" data-type="trSpan">Новости</ya-tr-span></a>
+            <a class="py-2 d-none d-md-inline-block" style="color: #000000;" href="/activity"><ya-tr-span data-index="0-0" data-value="Activity" data-translation="Мероприятия" data-type="trSpan">Мероприятия</ya-tr-span></a>
+            <a class="py-2 d-none d-md-inline-block" style="color: #000000;" href="/documentation"><ya-tr-span data-index="0-0" data-value="Documentation" data-translation="Документы" data-type="trSpan">Документы</ya-tr-span></a>
+            <a class="py-2 d-none d-md-inline-block" style="color: #000000;" href="/contact"><ya-tr-span data-index="0-0" data-value="Contact" data-translation="Связь" data-type="trSpan">Связь</ya-tr-span></a>
+<!--            <a class="py-2 d-none d-md-inline-block" href="/news/add"><ya-tr-span data-index="0-0" data-value="Adding an article" data-translation="Добавить новость" data-type="trSpan">Добавить новость</ya-tr-span></a>-->
+<!--            <a class="py-2 d-none d-md-inline-block" href="/activity/add"><ya-tr-span data-index="0-0" data-value="Adding events" data-translation="Добавить мероприятие" data-type="trSpan">Добавить мероприятие</ya-tr-span></a>-->
+            <form><a class="btn btn-danger" href="/login"><ya-tr-span data-index="0-0" data-value="Sign In" data-translation="Войти" data-translated="true" data-type="trSpan">Войти</ya-tr-span></a> <!--data-source-lang="en" data-target-lang="ru"  data-selected="false"-->
+            <form th:action="@{/logout}" method="post"><input class="btn btn-danger" type="submit" value="Выход"/></form></form>
+        </nav>
+    </header>
+</div>

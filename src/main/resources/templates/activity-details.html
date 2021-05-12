@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"> <!--подключение шаблонизатора thymeleaf-->
+<head>
+    <title>Мероприятия</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> <!--подключение css файла-->
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+<!--insert - встраивает фрагмент внутрь тега "путь :: фрагмент"-->
+<div class="container mt-5">
+    <!--container - встроенный класс, добавляющий отступы. mt-5 - отступы сверху, равные 5-ти пикс-->
+    <div th:each="el : ${activity}" class="alert alert-info mt-2"> <!--вывод записей перебором через цикл. el(переменная) : (указание того, что мы перебираем)-->
+        <h1 th:text="${el.title}"/> <!--обращение к полю title-->
+        <p th:utext="${el.fullText}"/>
+        <!--<p><b>Просмотры</b> <span th:text="${el.views}"/></p>-->
+        <a th:href="'/activity/' + ${el.id} + '/edit'" class="btn btn-warning">Редактировать</a><br><br> <!--ссылка на редактирование статьи-->
+        <form th:action="'/activity/' + ${el.id} + '/remove'" method="post"> <!--method="post" - информация передаётся в теле запроса-->
+        <button class="btn btn-warning" type="submit">Удалить</button> <!--type="submit" - перезагрузка страницы и отправка данных на сервер при нажатии на кнопку-->
+        </form>
+    </div>
+</div>
+<div th:insert="blocks/footer :: footer"></div>
+<!--insert - встраивает фрагмент внутрь тега "путь :: фрагмент"-->
+</body>
+</html>
