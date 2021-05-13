@@ -1,4 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto');
+.himg{
+    height: 220px;
+}
+
+.hpl{
+    padding-left: 50px;
+}
+
 .bs{
     margin-top: 20px;
     margin-bottom: 20px;
@@ -12,7 +20,7 @@
 .btn-danger {
     color: #fff;
     background-color: #ef2323;
-    border-color: #ef2323;
+    border-color: #f8f8f8;
 }
 
 .size{
@@ -34,6 +42,10 @@
 }
 
 .blocks{
+   height: 500px;
+}
+
+.blocksDoc{
    height: 470px;
 }
 
@@ -48,4 +60,21 @@
 .det{
     padding-left: 15px;
     padding-right: 15px;
+}
+
+.btn-cont {
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 20px;
+  padding-left: 20px;
+}
+
+.img:hover{
+    transform: scale(1.1);
+    height: 470px;
+    width: 340px;
+}
+
+.btnline{
+    float: left;
 }

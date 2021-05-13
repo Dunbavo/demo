@@ -5,6 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> <!--подключение css файла-->
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="dist/css/lightbox.css">
 </head>
 <body>
 <header th:insert="blocks/header :: header"></header>
@@ -13,6 +14,27 @@
     <!--container - встроенный класс, добавляющий отступы. mt-5 - отступы сверху, равные 5-ти пикс-->
     <h1>Документы</h1>
 
+    <div class="album py-5 bg-light">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+                    <div class="col an img">
+                        <div class="card shadow-sm blocksDoc">
+                            <a href="https://avatars.mds.yandex.net/get-pdb/4863916/7772a3aa-b9e7-40d3-9908-ca151d647c6a/s1200" data-lightbox="il"><img src="https://avatars.mds.yandex.net/get-pdb/4863916/7772a3aa-b9e7-40d3-9908-ca151d647c6a/s1200" style="height: 470px; width: 340px;"></a>
+                        </div>
+                    </div>
+
+                    <div class="col an img">
+                        <div class="card shadow-sm blocksDoc">
+                            <a href="https://avatars.mds.yandex.net/get-pdb/4444283/9f3b2af1-2f0f-4315-a026-110c3adde328/s1200" data-lightbox="il"><img src="https://avatars.mds.yandex.net/get-pdb/4444283/9f3b2af1-2f0f-4315-a026-110c3adde328/s1200" style="height: 470px; width: 340px;"></a>
+                        </div>
+                    </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="dist/js/lightbox-plus-jquery.js"></script>
 </div>
 <div th:insert="blocks/footer :: footer"></div>
 <!--insert - встраивает фрагмент внутрь тега "путь :: фрагмент"-->

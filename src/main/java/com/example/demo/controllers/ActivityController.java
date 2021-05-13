@@ -75,7 +75,7 @@ public class ActivityController {
         activity.setFullText(fullText);
         activity.setData(data);
         activityService.save(activity); //сохранение обновлённого объекта
-        return "redirect:/activity"; //переадресация пользователя на указанную страницу после добавления статьи
+        return "redirect:/activity/{id}"; //переадресация пользователя на указанную страницу после добавления статьи
     }
 
     @PostMapping("/activity/{id}/remove") //получение данных из формы
