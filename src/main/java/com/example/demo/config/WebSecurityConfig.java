@@ -16,26 +16,11 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 
 @Configuration
 @EnableWebSecurity
-//@EnableGlobalMethodSecurity(
-//        prePostEnabled = true,
-//        securedEnabled = true,
-//        jsr250Enabled = true)
+@EnableGlobalMethodSecurity(
+        prePostEnabled = true,
+        securedEnabled = true,
+        jsr250Enabled = true)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
-
-    @Autowired
-    public void configureGlobal(AuthenticationManagerBuilder auth)
-            throws Exception {
-        auth
-                .inMemoryAuthentication()
-//                .withUser("user").password(passwordEncoder().encode("password")).roles("USER")
-//                .and()
-                .withUser("admin").password(passwordEncoder().encode("admin")).roles("ADMIN");
-    }
-
-    @Bean
-    public BCryptPasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -52,6 +37,21 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                     .logout()
                     .permitAll();
+    }
+
+    @Autowired
+    public void configureGlobal(AuthenticationManagerBuilder auth)
+            throws Exception {
+        auth
+                .inMemoryAuthentication()
+//                .withUser("user").password(passwordEncoder().encode("password")).roles("USER")
+//                .and()
+                .withUser("admin").password(passwordEncoder().encode("admin")).roles("ADMIN");
+    }
+
+    @Bean
+    public BCryptPasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
     }
 //
 //    @Bean

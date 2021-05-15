@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Optional;
 
 @Controller
@@ -33,8 +34,8 @@ public class NewsController {
     }
 
     @PostMapping("/news/add") //получение данных из формы
-    public String newsPostAdd(@RequestParam String img, @RequestParam String title, @RequestParam String anons, @RequestParam String fullText, Model model) { //@RequestParam - получение значений из формы. title - получение значений из данного поля
-        Post post = new Post(img, title, anons, fullText); //объект на основе модели Post с названием post. (title, anons, fullText) - передача параметров
+    public String newsPostAdd(@RequestParam String img, @RequestParam String title, @RequestParam String anons, @RequestParam String fullText, @RequestParam Date data, Model model) { //@RequestParam - получение значений из формы. title - получение значений из данного поля
+        Post post = new Post(img, title, anons, fullText, data); //объект на основе модели Post с названием post. (title, anons, fullText) - передача параметров
         postService.save(post); //сохранение объекта и добавление в бд -> обращение к репозиторию -> обращение к функции save и передача в него объекта, который необходимо сохранить => добавление в таблицу post навых статей, полученных от пользователя
         //postRepository.save(post);
         return "redirect:/news"; //переадресация пользователя на указанную страницу после добавления статьи
@@ -67,7 +68,7 @@ public class NewsController {
     }
 
     @PostMapping("/news/{id}/edit") //получение данных из формы
-    public String newsPostUpdate(@PathVariable(value = "id") long id, @RequestParam String img, @RequestParam String title, @RequestParam String anons, @RequestParam String fullText, Model model) { //@RequestParam - получение значений из формы. title - получение значений из данного поля
+    public String newsPostUpdate(@PathVariable(value = "id") long id, @RequestParam String img, @RequestParam String title, @RequestParam String anons, @RequestParam String fullText, @RequestParam Date data, Model model) { //@RequestParam - получение значений из формы. title - получение значений из данного поля
         Post post = postService.findById(id).orElseThrow(
                 () -> new RuntimeException()
         ); //orElseTrow() - исключительная ситуация в случае не нахождения записи
@@ -75,6 +76,7 @@ public class NewsController {
         post.setTitle(title); //установка введеного заголовка
         post.setAnons(anons);
         post.setFullText(fullText);
+        post.setData(data);
         postService.save(post); //сохранение обновлённого объекта
         return "redirect:/news/{id}"; //переадресация пользователя на указанную страницу после добавления статьи
     }

@@ -25,8 +25,9 @@ public class MainController { //класс, отвещающий за обраб
     public String home(Model model) { //вызов функции и указание параметра model, который всегда принимается
         model.addAttribute("title", "Главная страница");//указание параметра "title", который будет передан в шаблон и текста "Главная страница"
         model.addAttribute("posts", postService.findAll()); //передача значений
+//        model.addAttribute("posts", postService.findAll(0,1).getContent());
         model.addAttribute("activities", activityService.findAll()); //передача значений
-//        model.addAttribute("activities", activityService.findAll(0,6).getContent()); //передача значений findAll(0,6).getContent())
+//        model.addAttribute("activities", activityService.findAll(0,6).getContent()); //передача значений
         return "home"; //вызов шаблона "home"
         /*при переходе на главную страницу будет вызываться функция home и передаётся параметр model.
         с помощью параметра model указываем данные, котрые можем передпть внутрь шаблона ("title", "Главная страница")*/

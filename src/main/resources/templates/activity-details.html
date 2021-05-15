@@ -3,25 +3,27 @@
 <head>
     <title>Мероприятия</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> <!--подключение css файла-->
-    <link rel="stylesheet" href="css/styles.css" >
+
 </head>
 <body>
 <header th:insert="blocks/header :: header"></header>
 <!--insert - встраивает фрагмент внутрь тега "путь :: фрагмент"-->
 <div class="container mt-5">
+    <h1>Мероприятия</h1>
     <!--container - встроенный класс, добавляющий отступы. mt-5 - отступы сверху, равные 5-ти пикс-->
-    <div th:each="el : ${activity}" class="album py-5 bg-light det"> <!--вывод записей перебором через цикл. el(переменная) : (указание того, что мы перебираем)-->
+    <div th:each="el : ${activity}" class="album py-5 bg-light det" style="padding-left: 20px; padding-right: 20px;"> <!--вывод записей перебором через цикл. el(переменная) : (указание того, что мы перебираем)-->
         <h1 th:text="${el.title}"/> <!--обращение к полю title-->
+        <p>Дата публикации: <p th:date="${el.data}"></p></p>
         <p th:utext="${el.fullText}"/>
-        <!--<p><b>Просмотры</b> <span th:text="${el.views}"/></p>-->
 
         <div sec:authorize="hasRole('ADMIN')">
             <div style="display: inline-flex;">
-                <a th:href="'/activity/' + ${el.id} + '/edit'" class="btn btn-warning btn-danger" style="margin-right: 7px;">Редактировать</a> <!--ссылка на редактирование статьи-->
+                <a th:href="'/activity/' + ${el.id} + '/edit'" class="btn btn-warning" style="margin-right: 7px; color: #fff; background-color: #ef2323; border-color: #ef2323">Редактировать</a> <!--ссылка на редактирование статьи-->
                 <!--            <a th:action="'/activity/' + ${el.id} + '/remove'" class="btn btn-warning btn-danger" type="submit" method="post">Удалить</a>-->
                 <form th:action="'/activity/' + ${el.id} + '/remove'" method="post"> <!--method="post" - информация передаётся в теле запроса-->
-                    <button class="btn btn-warning btn-danger" type="submit">Удалить</button> <!--type="submit" - перезагрузка страницы и отправка данных на сервер при нажатии на кнопку-->
+                    <button class="btn btn-warning" style="color: #fff; background-color: #ef2323; border-color: #ef2323" type="submit">Удалить</button> <!--type="submit" - перезагрузка страницы и отправка данных на сервер при нажатии на кнопку-->
                 </form>
             </div>
         </div>

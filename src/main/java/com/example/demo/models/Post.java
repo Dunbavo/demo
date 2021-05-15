@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.util.Date;
 
 @Entity //аннотация. указание того, что данный класс - модель, которая будет отвечать за отпределённую таблицу БД
 public class Post {
@@ -12,6 +13,7 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.AUTO) //аннотация - при добавлении новой записи позволит генерировать новые значения внутри данного поля (автоматически)
     private Long id; //поле - уникальные идентификатор (Long - тип данных)
     private String img, title, anons, fullText; // поле - название статьи, анонс, полный текс статьи
+    private Date data;
 
     public Long getId() {
         return id;
@@ -53,14 +55,23 @@ public class Post {
         this.fullText = fullText;
     }
 
+    public Date getData() {
+        return data;
+    }
+
+    public void setData(Date data) {
+        this.data = data;
+    }
+
     public Post() {
     }
 
-    public Post(String img, String title, String anons, String fullText) {
+    public Post(String img, String title, String anons, String fullText, Date data) {
         this.img = img;
         this.title = title;
         this.anons = anons;
         this.fullText = fullText;
+        this.data = data;
     }
 }
 

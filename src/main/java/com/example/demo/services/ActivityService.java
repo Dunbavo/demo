@@ -15,8 +15,7 @@ import java.util.Optional;
 @Service
 public class ActivityService {
 
-    @Autowired
-    private ActivityRepository activityRepository;
+    @Autowired private ActivityRepository activityRepository;
 
     public List<Activity> findAll() {
         ArrayList<Activity> activities = new ArrayList<>();
