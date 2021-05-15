@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org"> <!--подключение шаблонизатора thymeleaf-->
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml"> <!--подключение шаблонизатора thymeleaf-->
 <head>
     <title>Новости</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -12,7 +12,10 @@
     <div class="container mt-5">
         <!--container - встроенный класс, добавляющий отступы. mt-5 - отступы сверху, равные 5-ти пикс-->
         <h1>Новости</h1>
-        <div class="btn-group"><a th:href="'/news/add'" class="btn btn-danger an">Добавить новость</a></div>
+
+        <div sec:authorize="hasRole('ADMIN')">
+            <div class="btn-group"><a th:href="'/news/add'" class="btn btn-danger an">Добавить новость</a></div>
+        </div>
 
         <div class="album py-5 bg-light">
             <div class="container">

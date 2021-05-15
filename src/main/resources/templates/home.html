@@ -53,7 +53,7 @@
                         <div class="card-body">
                             <h3 th:text="${el.title}"/>
                             <p th:text="${el.anons}"/>
-                            <p th:text="${el.data}"/>
+                            <p th:date="${el.data}"/>
                         </div>
                         <div class="btn-cont" style="padding-bottom: 20px; padding-left: 20px;">
                             <a th:href="'/news/' + ${el.id}" class="btn btn-danger">Детальнее</a>

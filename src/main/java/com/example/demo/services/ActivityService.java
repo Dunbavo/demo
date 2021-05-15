@@ -3,6 +3,9 @@ package com.example.demo.services;
 import com.example.demo.models.Activity;
 import com.example.demo.repo.ActivityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -21,6 +24,10 @@ public class ActivityService {
         return activities;
     }
 
+    public Page<Activity> findAll(int page, int size) {
+        return activityRepository.findAll(PageRequest.of(page, size, Sort.by("date")));
+    }
+
     public Activity save(Activity activity) {
         return activityRepository.save(activity);
     }
@@ -36,5 +43,7 @@ public class ActivityService {
     public void delete(Activity activity) {
         activityRepository.delete(activity);
     }
+
+
 }
 

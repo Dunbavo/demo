@@ -22,14 +22,13 @@
             <input type="text" name="img" placeholder="Вставьте ссылку на изображение" class="form-control"><br>
             <input type="text" name="title" placeholder="Введите название мероприятия" class="form-control"><br><!--ввод текста. name="title" - ввод названий статьи. placeholder - подсказка. class="form-control" - класс bootstrap-->
             <input type="text" name="anons" placeholder="Введите анонс мероприятия" class="form-control"><br>
-            <input type="text" name="data" placeholder="Введите дату мероприятия" class="form-control"><br>
+            <input type="date" name="data" placeholder="Введите дату мероприятия" class="form-control"><br>
             <textarea id="summernote" name="fullText" class="form-control"></textarea><br>
             <button type="submit" class="btn btn-danger">Добавить мероприятие</button> <!--type="submit" - при нажатии на кнопку страница перезагружается и данные отправляются на сервер. class="btn btn-success" - класс bootstrap-->
         </form>
     </div>
     <script>
       $('#summernote').summernote({
-            lang:'ru-RU',
             placeholder: 'Введите полный текст мероприятия',
             tabsize: 2,
             height: 300,

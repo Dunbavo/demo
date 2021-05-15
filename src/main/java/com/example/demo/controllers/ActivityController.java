@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Optional;
 
 @Controller
@@ -31,7 +32,7 @@ public class ActivityController {
     }
 
     @RequestMapping(value = "/activity/add",method = RequestMethod.POST) //получение данных из формы
-    public String activityActivityAdd(@RequestParam String img, @RequestParam String title, @RequestParam String anons, @RequestParam String data, @RequestParam String fullText, Model model) { //@RequestParam - получение значений из формы. title - получение значений из данного поля
+    public String activityActivityAdd(@RequestParam String img, @RequestParam String title, @RequestParam String anons, @RequestParam Date data, @RequestParam String fullText, Model model) { //@RequestParam - получение значений из формы. title - получение значений из данного поля
         Activity activity = new Activity(img, title, anons, data, fullText); //объект на основе модели Post с названием post. (title, anons, fullText) - передача параметров
         activityService.save(activity); //сохранение объекта и добавление в бд -> обращение к репозиторию -> обращение к функции save и передача в него объекта, который необходимо сохранить => добавление в таблицу post навых статей, полученных от пользователя
         //postRepository.save(post);
@@ -65,7 +66,7 @@ public class ActivityController {
     }
 
     @PostMapping("/activity/{id}/edit") //получение данных из формы
-    public String activityActivityUpdate(@PathVariable(value = "id") long id, @RequestParam String img, @RequestParam String title, @RequestParam String anons, @RequestParam String fullText, @RequestParam String data, Model model) { //@RequestParam - получение значений из формы. title - получение значений из данного поля
+    public String activityActivityUpdate(@PathVariable(value = "id") long id, @RequestParam String img, @RequestParam String title, @RequestParam String anons, @RequestParam String fullText, @RequestParam Date data, Model model) { //@RequestParam - получение значений из формы. title - получение значений из данного поля
         Activity activity = activityService.findById(id).orElseThrow(
                 () -> new RuntimeException()
         ); //orElseTrow() - исключительная ситуация в случае не нахождения записи

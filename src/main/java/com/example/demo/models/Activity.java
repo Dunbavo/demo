@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.xml.crypto.Data;
+import java.util.Date;
 
 @Entity
 public class Activity {
@@ -12,7 +12,7 @@ public class Activity {
     @GeneratedValue(strategy = GenerationType.AUTO) //аннотация - при добавлении новой записи позволит генерировать новые значения внутри данного поля (автоматически)
     private Long id; //поле - уникальные идентификатор (Long - тип данных)
     private String img, title, anons, fullText; // поле - название статьи, анонс, полный текс статьи, дата
-    private String data;
+    private Date data;
 
     public Long getId() {
         return id;
@@ -46,11 +46,11 @@ public class Activity {
         this.anons = anons;
     }
 
-    public String getData() {
+    public Date getData() {
         return data;
     }
 
-    public void setData(String data) {
+    public void setData(Date data) {
         this.data = data;
     }
 
@@ -65,7 +65,7 @@ public class Activity {
     public Activity() {
     }
 
-    public Activity(String img, String title, String anons, String data, String fullText) {
+    public Activity(String img, String title, String anons, Date data, String fullText) {
         this.img = img;
         this.title = title;
         this.anons = anons;

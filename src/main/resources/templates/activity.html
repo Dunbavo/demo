@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org"> <!--подключение шаблонизатора thymeleaf-->
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml"> <!--подключение шаблонизатора thymeleaf-->
 <head>
     <title>Мероприятия</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -12,7 +12,11 @@
     <div class="container mt-5">
         <!--container - встроенный класс, добавляющий отступы. mt-5 - отступы сверху, равные 5-ти пикс-->
         <h1>Мероприятия</h1>
-        <div class="btn-group"><a th:href="'/activity/add'" class="btn btn-danger an">Добавить мероприятие</a></div>
+        <div sec:authorize="hasRole('ADMIN')">
+            <div class="btn-group">
+                <a th:href="'/activity/add'" class="btn btn-danger an">Добавить мероприятие</a>
+            </div>
+        </div>
         <div class="album py-5 bg-light">
             <div class="container">
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
@@ -23,7 +27,7 @@
                             <div class="card-body">
                                 <h3 th:text="${el.title}"/>
                                 <p th:text="${el.anons}"/>
-                                <p th:text="${el.data}"/>
+                                <p th:date="${el.data}"/>
                             </div>
                             <div class="btn-cont" style="  padding-bottom: 20px; padding-left: 20px;">
                                 <a th:href="'/news/' + ${el.id}" class="btn btn-danger">Детальнее</a>

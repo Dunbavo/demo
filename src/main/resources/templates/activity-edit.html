@@ -24,7 +24,7 @@
             <input type="text" th:value="${el.title}" name="title" placeholder="Вставьте название мероприятия" class="form-control"><br><!--ввод текста. name="title" - ввод названий статьи.
             placeholder - подсказка. class="form-control" - класс bootstrap. th:value="${el.title}" - подставляется название статьи-->
             <input type="text" th:value="${el.anons}" name="anons" placeholder="Введите анонс мероприятия" class="form-control"><br>
-            <input type="text" th:value="${el.data}" name="data" placeholder="Введите дату мероприятия" class="form-control"><br>
+            <input type="date" th:value="${el.data}" name="data" placeholder="Введите дату мероприятия" class="form-control"><br>
             <textarea id="summernote" name="fullText" class="form-control" th:text="${el.fullText}"/><br>
             <button type="submit" class="btn btn-danger">Обновить</button> <!--type="submit" - при нажатии на кнопку страница перезагружается и данные отправляются на сервер.
             class="btn btn-success" - класс bootstrap. th:text="${el.fullText}" - всавляет текст внутрь тега (отличается от предыдущих, т.к. используется "textarea")-->
