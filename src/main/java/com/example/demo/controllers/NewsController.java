@@ -5,6 +5,7 @@ import com.example.demo.models.Post;
 import com.example.demo.repo.PostRepository;
 import com.example.demo.services.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -33,6 +34,7 @@ public class NewsController {
         return "news-add";
     }
 
+    @PreAuthorize("hasAuthority('ADMIN')")
     @PostMapping("/news/add") //получение данных из формы
     public String newsPostAdd(@RequestParam String img, @RequestParam String title, @RequestParam String anons, @RequestParam String fullText, @RequestParam Date data, Model model) { //@RequestParam - получение значений из формы. title - получение значений из данного поля
         Post post = new Post(img, title, anons, fullText, data); //объект на основе модели Post с названием post. (title, anons, fullText) - передача параметров
